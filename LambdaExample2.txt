@@ -1,0 +1,44 @@
+//PMessage Class
+
+
+public class PMessage {
+    public String pMessage(String msg){
+        return msg;
+    }
+
+
+//PrintMsg Interface
+
+public interface PrintMsg {
+    String printFMessage(String message);
+}
+
+//Traditional Code
+
+public class PrintMessage {
+
+    public static void main(String[] args) {
+        PMessage p = new PMessage();
+            String phrase1 = "Sri Lanka is in, ";
+            String phrase2 = "danger.";
+            String sentence = p.pMessage(phrase1+phrase2);
+            System.out.println(sentence);
+        };
+    }
+
+
+//Lambda Code
+
+public class LambdaPrintMessage {
+        public static void main(String[] args) {
+
+            PrintMsg sentence = (message)-> {
+                String phrase1 = "Sri Lanka is in, ";
+                String phrase2 = phrase1 + message;
+                return phrase2;
+            };
+            System.out.println(sentence.printFMessage("danger."));
+        }
+
+
+}

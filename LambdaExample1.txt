@@ -1,0 +1,39 @@
+//CalculateMultiply Class
+
+public class CalculateMultiply {
+    public int multiplyNumbers(int x, int y,int z) {
+        return x*y*z;
+    }
+
+}
+
+//MultiplyNums Interface
+public interface MultiplyNums {
+    int MultiplyNumbers(int a1, int a2, int a3);
+}
+
+//Traditional Code
+
+public class Multiply {
+
+    public static void main(String[] args){
+        CalculateMultiply multiply = new CalculateMultiply();
+        int x=2,y=4,z=3,result;
+        result=multiply.multiplyNumbers(x,y,z);
+        System.out.println(result);
+
+
+    }
+}
+
+//Lambda Code
+
+public class LambdaMultiply {
+    public static void main(String[] args) {
+        MultiplyNums multiply = (x, y, z) -> {
+            return x*y*z;
+        };
+        int result = multiply.MultiplyNumbers(5, 4, 2);
+        System.out.println(result);
+    }
+}
